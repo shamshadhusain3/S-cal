@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JODO GHATAO</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="uti.css"/>
+</head>
+
+<body>
+<div class="container1">
+    <h1 class="text-center">Gadna yantra me swagat hai</h1><hr>
+    <div class="container bg-red">
+        <div class="row">
+            <input type="text" class="input" name="scrn">
+        </div>
+       
+        <div class="row">
+            <button class="btn" onclick="">7</button>
+            <button class="btn" onclick="">8</button>
+            <button class="btn" onclick="">9</button>
+            <button class="btn" onclick="">*</button>
+        </div> <div class="row">
+            <button class="btn" value="">4</button>
+            <button class="btn" value="">5</button>
+            <button class="btn" value="">6</button>
+            <button class="btn">-</button>
+        </div> <div class="row">
+            <button class="btn" value="">1</button>
+            <button class="btn" value="">2</button>
+            <button class="btn" value="">3</button>
+            <button class="btn" value="">+</button>
+        </div>
+        <div class="row">
+            <button class="btn" value="">0</button>
+            <button class="btn" value="">.</button>
+            <button class="btn" value="">%</button>
+            <button class="btn" value="">/</button>
+        </div>
+        <div class="row">
+            <button class="btn ent" value="">=</button>
+            <button class="btn ac" value="">Del</button>
+            <button class="btn ac" value="">AC</button>
+          
+        </div>
+    </div>
+</div>
+
+<!-- javascript program -->
+    <script>
+        let string = "";
+let buttons = document.querySelectorAll(".btn");
+Array.from(buttons).forEach((button)=>{
+button.addEventListener("click",(e)=>{
+    if(e.target.innerHTML == "="){
+        string = eval(string);
+        document.querySelector("input").value = string;
+
+    }
+    else if (e.target.innerHTML == "AC") {
+        string = "";
+        document.querySelector("input").value = string;
+    }
+    else if (e.target.innerHTML == "Del") {
+        string = string.slice(0,-1);
+        document.querySelector("input").value = string;
+    }
+    else{
+        console.log(e.target)
+        string = string + e.target.innerHTML;
+        document.querySelector("input").value = string;
+    }
+
+   })
+}) 
+    </script>
+</body>
+
+</html>
